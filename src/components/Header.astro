@@ -1,0 +1,30 @@
+---
+
+
+---
+
+<header class="fixed top-3 z-10 flex items-center justify-center w-full mx-auto mt-2">
+    
+    <nav id="miNav" class="flex text-sm sm:text-base text-white gap-x-1 md:gap-x-10 opacity-80 rounded-full">
+        <a id="navA" class="p-1 sm:p-2 hover:scale-110 transition hover:text-indigo-500 ml-1 md:ml-4" href="#top">Inicio</a>
+        <a id="navA" class="p-1 sm:p-2 hover:scale-110 transition hover:text-indigo-500" href="#proyectos">Proyectos</a>
+        <a id="navA" class="p-1 sm:p-2 hover:scale-110 transition hover:text-indigo-500" href="#sobre-mi">Sobre Mi</a>
+        <a id="navA" class="p-1 sm:p-2 hover:scale-110 transition hover:text-indigo-500" href="#formacion">Formación</a>
+        <a id="navA" class="p-1 sm:p-2 hover:scale-110 transition hover:text-indigo-500 mr-1 md:mr-4" href="mailto:samidas86@gmail.com">Contacto</a>
+    </nav>
+</header>
+
+<script>
+   window.addEventListener('scroll', function() {
+      var navElement = document.getElementById('miNav');
+      if (window.scrollY > 100) {
+         navElement.classList.remove('text-white');
+         navElement.classList.add('bg-indigo-200', 'text-indigo-900', 'border', 'border-indigo-800');
+      } else {
+         navElement.classList.remove('bg-indigo-200', 'text-indigo-900', 'border', 'border-indigo-800'); 
+         navElement.classList.add('text-white') 
+      }
+   });
+</script>
+ 
+</script>

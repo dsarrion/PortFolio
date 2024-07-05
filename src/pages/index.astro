@@ -1,0 +1,103 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Projects from "../components/Projects.astro";
+import Badge from "../components/Badge.astro";
+import AboutMe from "../components/AboutMe.astro";
+import Footer from "../components/Footer.astro";
+import Certificates from "../components/Certificates.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import GithubIcon from "../components/icons/Github.astro";
+import CodeIcon from "../components/icons/Code.astro";
+import SocialPill from "../components/icons/SocialPill.astro";
+import MailIcon from "../components/icons/Mail.astro";
+import UserMeIcon from "../components/icons/UserMe.astro";
+import SchoolIcon from "../components/icons/School.astro";
+
+const MiImagen = "/assets/David_perfil.png"
+const description = "Contrata a David Sarrión para crear y resolver soluciones de manera óptima para alcanzar los objetivos empresariales aportando mis habilidades y compromiso con el buen ambiente en equipo."
+---
+
+<Layout 
+	title="Porfolio de David Sarrión - Programador y Desarrollador Web" 
+	description={description}
+>
+	<main class="px-4 md:px-22 sm:px-14">
+		<SectionContainer class="py-24 md:py-44 md:pb-40">
+			<img
+				class="rounded-full size-28 mb-4 opacity-90" 
+				src={MiImagen}
+				alt="David Sarrión foto de perfil"
+			/>
+			<h1 class="text-white/90 text-3xl lg:text-4xl font-bold flex 
+				flew-row gap-x-4 pb-6 lg:pb-10">
+				Hola, soy David Sarrión 
+				<a href="https://www.linkedin.com/in/david-sarri%C3%B3n-mu%C3%B1oz-2ab516284"
+				target="_blank"
+				rel="noopener"
+				class="flex justify-center items-center">
+					<Badge>Disponible para trabajar</Badge>
+				</a>
+				</div>
+			</h1>
+			<h2 class="text-xl lg:text-2xl text-white opacity-80 text-wrap max-w-[700px]">
+				<span>Apasionado de la tecnología con +1 año de experiencia como </span>
+				<span class="text-indigo-200">Desarrollador Web </span>
+				<span class="text-indigo-300"><strong>Full Stack.</strong></span> 
+				<span class="opacity-80" ></span>
+				<span class="text-red-300/90"> Desde </span>
+				<span class="text-yellow-100/90"> Granada, </span>
+				<span class="text-red-300/90">España</span>. 
+			</h2>
+			<nav class="flex gap-6 mt-6 flex-wrap">
+				<SocialPill href="https://www.linkedin.com/in/david-sarri%C3%B3n-mu%C3%B1oz-2ab516284">
+					<LinkedInIcon class="size-4 md:size-5 lg:size-5" />
+					LinkedIn
+				</SocialPill>			
+				<SocialPill href="https://github.com/dsarrion">
+					<GithubIcon class="size-4 md:size-5 lg:size-5" />
+					Github
+				</SocialPill>
+				<SocialPill href="mailto:samidas86@gmail.com">
+					<MailIcon class="size-4 md:size-5 lg:size-5" />
+					samidas86@gmail.com
+				</SocialPill>	
+			</nav>
+		</SectionContainer>
+
+		<SectionContainer id="proyectos" class="scroll-mt-24">
+			<h2 class="text-3xl text-white/90 font-semibold mb-1 flex gap-x-3 items-center">
+				<CodeIcon class="size-7 m-1" />
+					Proyectos
+			</h2>
+			<h3 class="text-gray-400 mb-6">He creado varios proyectos en los cursos realizados: aplicación de tareas, blog, tienda online, red social (tipo Instagram)... pero mi proyecto mas personal y especial es este:</h3>
+			<Projects />
+		</SectionContainer>
+	
+
+		<SectionContainer id="sobre-mi" class="scroll-mt-24">
+
+			<h2 class="text-3xl text-white/90 font-semibold mb-6 flex gap-x-3 items-center">
+				<UserMeIcon class="size-8 m-1" />
+				Sobre mí
+			</h2>
+			<AboutMe />
+
+		</SectionContainer>
+
+		<SectionContainer id="formacion" class="scroll-mt-24 pb-6 md:pb-32">
+
+			<h2 class="text-3xl text-white/90 font-semibold mb-6 flex gap-x-3 items-center">
+				<SchoolIcon class="size-10 m-1" />
+				Formación
+			</h2>
+			<Certificates />
+
+		</SectionContainer>
+
+		<Footer />
+	</main>
+</Layout>
+
+
