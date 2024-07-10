@@ -1,26 +1,32 @@
 ---
+import Github from "./icons/Github.astro";
+
 const PROJECTS = [
     {
         title: "TalentoDJs",
         description1:
-            "Aplicación Web de Música para escuchar sesiones de DJs por géneros musicales, con funcionalidades como registro de usuarios, comentarios, avatar, likes, sección de mis favoritos...",
+            "Aplicación Web para escuchar Música, sesiones de DJs por géneros musicales, con funcionalidades como registro de usuarios, comentarios, avatar, likes, sección de mis favoritos...",
         description2:
-            "Front-end realizado con Angular y el Back-end es una API RESTfull hecha en Laravel con base de datos MySQL despleguado en servidor en la nube, asegurando la escalabilidad y disponibilidad del servicio.",        link: "http://talentoDJs.com",
+            "Frontend realizado con Angular y Backend es una API RESTfull hecha en Laravel con base de datos MySQL despleguado en servidor en la nube, asegurando la escalabilidad y disponibilidad del servicio.",        
+        link: "https://talentoDJs.com",
         github: "#",
-        image: "/",
         tags: ["Angular", "Laravel", "MySQL", "TailwindCSS"],
     },
 ];
 ---
 
 {
-    PROJECTS.map(({ image, title, description1, description2, tags, link }) => (
-        <article>
-            <h3 class="text-3xl font-semibold italic text-indigo-300 mb-2 text-center">
-                {title}
-            </h3>
+    PROJECTS.map(({ title, description1, description2, tags, link }) => (
+        <article class="cursor-default">
+            <a href={link}>
+                <h3 class="text-3xl font-semibold italic text-indigo-500/90 mb-2 text-center">
+                    {title}
+                </h3>
+            </a>
+            
             <p class="text-white/80 text-pretty">{description1}</p>
             <p class="text-white/80 mb-4 text-pretty">{description2}</p>
+
             <ul class="flex justify-center text-gray-400/80 gap-5 text-center mb-1.5">
             {tags.map((tag) => (
                 <li>{tag}</li>
@@ -29,29 +35,43 @@ const PROJECTS = [
             <div class="border border-gray-800/70 shadow-md shadow-indigo-900/70 rounded-lg p-1 bg-black">
                 <a href={link}>          
                 <img
-                    class="rounded shadow-2xl"
+                    class="rounded shadow-2xl opacity-90 hover:opacity-80"
                     src= "/assets/proy.2.jpg"
-                    alt={`Captura de pantalla del proyecto ${image}`}
+                    alt="talentoDJs"
                 />                
             </a>
             </div>       
             <div class="flex justify-center space-x-2 mt-6"> 
                 <a href={link}>
                     <img
-                    class="rounded-3xl max-h-[550px] mt-1.5"
+                    class="rounded-3xl max-h-[550px] mt-1.5 opacity-90 hover:opacity-80"
                     src= "/public/assets/proy.4.png"
-                    alt={`Captura de pantalla del proyecto ${image}`}/>
+                    alt="talentoDJs"/>
                 
                     
                 </a>
                 <a href={link}>
                     <img
-                    class="rounded-3xl max-h-[560px]"
+                    class="rounded-3xl max-h-[560px] opacity-90 hover:opacity-80"
                     src= "/public/assets/proy.3.png"
-                    alt={`Captura de pantalla del proyecto ${image}`}/>
+                    alt="talentoDJs"/>
                 </a>
             </div>
-            
+            <span class="flex justify-center items-center text-gray-400 mt-6 group">
+                <Github class="size-5 mr-2 group-hover:text-white"></Github>
+                Codigo de proyecto:
+                <div>
+                    <a href="https://github.com/dsarrion/talentodjs" 
+                        class="ml-3 hover:underline hover:text-gray-300">
+                        -Angular-
+                    </a>
+                    <a href="https://github.com/dsarrion/api-laravel-talentodjs"
+                    class="ml-3 hover:underline hover:text-gray-300">
+                        -Laravel-
+                    </a>
+                </div>               
+                <Github class="size-5 ml-3 group-hover:text-white"></Github>
+            </span>
                     
         </article>
     ))

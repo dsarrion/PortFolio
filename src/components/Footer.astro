@@ -9,22 +9,18 @@ import GithubIcon from "./icons/Github.astro";
 ---
 
 <footer class="rounded-lg shadow m-4 bg-black/20 backdrop-blur-lg w-full xl:w-[1120px] mx-auto">
-    <div
-        class="w-full mx-auto max-w-screen-xl p-2 md:p-4 md:flex md:items-center md:justify-between"
-    >
-        <span class="mt-1 ml-2 lg:ml-6 flex justify-center text-sm text-indigo-100/70 sm:text-center"
+    <div class="w-full mx-auto max-w-screen-xl p-2 md:p-4 flex flex-col md:flex-row items-center md:justify-between">
+        <span class="mt-2 md:mt-1 ml-2 lg:ml-6 flex justify-center order-2 md:order-none text-sm text-indigo-100/70 sm:text-center cursor-default"
             >Web creada por: <strong class="ml-1"> David Sarrión © 2024</strong>  
         </span>
-        <span class="hidden md:flex lg:mr-16">
+        <span class="lg:mr-16 flex justify-center order-last md:order-none mt-4 md:mt-0 mb-1 md:mb-0">
             <AstroIcon class="size-8 lg:ml-4"/>
             <HtmlIcon class="size-8 ml-3"/>
             <TailwindIcon class="size-9 ml-3 pb-1.5 " />
         </span>
-        <ul
-            class="flex flex-wrap justify-center items-center mt-1 text-sm font-medium text-indigo-100/80"
-        >
+        <ul class="flex flex-wrap justify-center items-center order-1 md:order-none mt-1 text-sm font-medium text-indigo-100/80">
             <li>
-                <a href="#top" class="flex mx-2 md:mr-4 lg:mr-10">
+                <a href="#top" class="flex mx-2 md:mr-4 lg:mr-10" title="Subir">
                     <UpIcon class="size-8 md:size-10"/>
                     
                 </a>
