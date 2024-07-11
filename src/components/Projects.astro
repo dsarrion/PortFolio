@@ -1,5 +1,32 @@
 ---
 import Github from "./icons/Github.astro";
+import Angular from "./icons/Angular.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Laravel from "./icons/Laravel.astro";
+import Mysql from "./icons/Mysql.astro";
+
+const TAGS = {
+    Angular: {
+        name: 'Angular',
+        class: 'bg-gray-800 text-gray-200',
+        icon: Angular
+    },
+    Tailwind: {
+        name: 'Tailwind CSS',
+        class: 'bg-gray-800/80 text-gray-200',
+        icon: Tailwind
+    },
+    Laravel: {
+        name:'Laravel',
+        class: 'bg-indigo-100/70 text-gray-800',
+        icon: Laravel
+    },
+    Mysql: {
+        name: 'MySQL',
+        class: 'bg-indigo-100/70 text-gray-800',
+        icon: Mysql
+    }
+}
 
 const PROJECTS = [
     {
@@ -10,26 +37,32 @@ const PROJECTS = [
             "Frontend realizado con Angular y Backend es una API RESTfull hecha en Laravel con base de datos MySQL despleguado en servidor en la nube, asegurando la escalabilidad y disponibilidad del servicio.",        
         link: "https://talentoDJs.com",
         github: "#",
-        tags: ["Angular", "Laravel", "MySQL", "TailwindCSS"],
+        tags: [ TAGS.Angular,TAGS.Laravel , TAGS.Tailwind, TAGS.Mysql]
     },
-];
+]
+
 ---
 
 {
-    PROJECTS.map(({ title, description1, description2, tags, link }) => (
+    PROJECTS.map(({ title, description1, tags, description2, link }) => (
         <article class="cursor-default">
             <a href={link}>
-                <h3 class="text-3xl font-semibold italic text-indigo-500/90 mb-2 text-center">
+                <h3 class="text-2xl font-semibold italic text-indigo-300/90 mb-1 text-center">
                     {title}
                 </h3>
             </a>
             
             <p class="text-white/80 text-pretty">{description1}</p>
             <p class="text-white/80 mb-4 text-pretty">{description2}</p>
-
-            <ul class="flex justify-center text-gray-400/80 gap-5 text-center mb-1.5">
+   
+            <ul class="flex flex-row justify-center gap-x-1 md:gap-x-2 mb-2 md:ml-4">  
             {tags.map((tag) => (
-                <li>{tag}</li>
+                <li>
+                    <span class={`flex gap-x-1 rounded-full text-xs ${tag.class} py-1 px-2`}>
+                        <tag.icon class="size-4" />
+                        {tag.name}
+                    </span>     
+                </li>
             ))}
             </ul>            
             <div class="border border-gray-800/70 shadow-md shadow-indigo-900/70 rounded-lg p-1 bg-black">
